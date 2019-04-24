@@ -15,10 +15,11 @@ public class Columna : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-        rbColum.AddForce(new Vector2(columVelocity, 2), ForceMode2D.Impulse);
-            rbColum.gravityScale = 1.0f;
+	void FixedUpdate () {
         //if (playerLive) {
+        //rbColum.velocity = new Vector2(columVelocity, rbColum.velocity.y);
+        //rbColum.AddForce(Vector2.up * columVelocity, ForceMode2D.Impulse);
+        rbColum.velocity = new Vector2( 0.0f, columVelocity);
         //}
 	}
     
