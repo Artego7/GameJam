@@ -8,6 +8,8 @@ TagManager:
   - Triangulo
   - Circulo
   - Canvas
+  - Rombo
+  - Pentagono
   layers:
   - Default
   - TransparentFX

@@ -4,48 +4,37 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Columna : MonoBehaviour {
-
+    //cambiar el nombre del player a medida que cambia la forma y hacer la deteccion a través del nombre
+    Player player;
     Image geometryPrefab;
-    GameObject columPrefab;
+    //GameObject columPrefab;
     RectTransform columRectTransform;
-    //public Sprite imageSprite;
     public float columVelocity;
     float columXAxis;
     float columYAxis;
     float columZAxis;
     int imageSprite;
-    //bool playerLive;
 
-
-    // Use this for initialization
     void Start () {
+        player = GetComponent<Player>();
         geometryPrefab = GetComponent<Image>();
-        columPrefab = GetComponent<GameObject>();
+        //columPrefab = GetComponent<GameObject>();
         columRectTransform = GetComponent<RectTransform>();
-        //columRectTransform.anchoredPosition = new Vector3( 0.0f, -1263.0f, 0.0f );
-        //gameObject.transform.position = new Vector3( 0.0f, -1263.0f, 0.0f );
         columXAxis = 0.0f;
         columYAxis = -2696.0f;
         columZAxis = 0.0f;
         imageSprite = 0;
     }
 
-    // Update is called once per frame
     void FixedUpdate () {
-        //if (playerLive) {
-
-        columRectTransform.anchoredPosition = new Vector3(columXAxis, columYAxis, columZAxis);
-        columYAxis += columVelocity;
-        GenerateColum();
-        changeSide();
+        //if (player.isAlive) {
+            columRectTransform.anchoredPosition = new Vector3(columXAxis, columYAxis, columZAxis);
+            columYAxis += columVelocity;
+            GenerateColum();
+            changeSide();
         //}
     }
     void GenerateColum() {
-        //se ha visto todo por pantalla
-        //if () {
-        //    Instantiate(this);
-        //    GameObject enemy = GameObject.Instantiate(columPrefab, Vector3.zero, Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
-        //}
 
     }
 

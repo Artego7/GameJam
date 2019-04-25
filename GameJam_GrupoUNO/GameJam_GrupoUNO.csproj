@@ -236,6 +236,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Columna.cs" />
+    <Compile Include="Assets\Scripts\Geometrias.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Player2.cs" />
   </ItemGroup>
