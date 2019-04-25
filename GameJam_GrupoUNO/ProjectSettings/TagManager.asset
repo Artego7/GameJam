@@ -7,6 +7,7 @@ TagManager:
   - Cuadrado
   - Triangulo
   - Circulo
+  - Canvas
   layers:
   - Default
   - TransparentFX
