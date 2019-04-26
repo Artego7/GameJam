@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
 
     public bool isAlive;
     public bool isMask;
+    public bool isMeta;
     public float delay = 0f;
     public string[] nameGeo = new string[] 
     {
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour {
         animatorPly = GetComponent<Animator>();
         imagePlayer = GetComponent<Image>();
         isAlive = true;
+        isMeta = false;
         imagePlayer.sprite.name = nameGeo[Random.Range(0, 4)];
         print(imagePlayer.sprite.name);
         SetGeometry();
@@ -78,16 +80,19 @@ public class Player : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        
 
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Mask")
-        {
-            print("hola");
+        if (collision.gameObject.tag == "Mask") {
             isMask = true;
         } else {
             isMask = false;
+        }
+
+        if (collision.gameObject.tag == "Meta") {
+            isMeta = true;
         }
         //if (!formasPly.Equals(geometria.formasGeo)) {
         //    isAlive = false;

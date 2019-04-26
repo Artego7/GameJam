@@ -256,7 +256,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1387994404294268, guid: 4adc0b63a5314154986c0ec6d0784d0f, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4adc0b63a5314154986c0ec6d0784d0f, type: 2}
@@ -353,7 +353,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1899672577}
+  Meta: {fileID: 1469740112}
   columVelocity: 10
+  columXAxis: 0
+  columYAxis: -2696
+  columZAxis: 0
 --- !u!50 &463347462
 Rigidbody2D:
   serializedVersion: 4
@@ -517,7 +521,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1387994404294268, guid: 4adc0b63a5314154986c0ec6d0784d0f, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4adc0b63a5314154986c0ec6d0784d0f, type: 2}
@@ -1013,7 +1017,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1387994404294268, guid: 4adc0b63a5314154986c0ec6d0784d0f, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4adc0b63a5314154986c0ec6d0784d0f, type: 2}
@@ -1121,7 +1125,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 96}
+  m_AnchoredPosition: {x: 0, y: 309}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!58 &1899672576
@@ -1153,6 +1157,7 @@ MonoBehaviour:
   geometria: {fileID: 0}
   isAlive: 1
   isMask: 0
+  isMeta: 0
   delay: 0.47
   nameGeo:
   - G_Cuadrado_PNG
@@ -1309,7 +1314,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1387994404294268, guid: 4adc0b63a5314154986c0ec6d0784d0f, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61629925287321942, guid: 4adc0b63a5314154986c0ec6d0784d0f,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 15.19109
+      objectReference: {fileID: 0}
+    - target: {fileID: 61629925287321942, guid: 4adc0b63a5314154986c0ec6d0784d0f,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 25.696815
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4adc0b63a5314154986c0ec6d0784d0f, type: 2}
