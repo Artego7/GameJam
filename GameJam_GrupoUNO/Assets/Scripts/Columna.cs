@@ -5,31 +5,51 @@ using UnityEngine.UI;
 
 public class Columna : MonoBehaviour {
     //cambiar el nombre del player a medida que cambia la forma y hacer la deteccion a través del nombre
+    public RectTransform playerRectTransform;
     public Player player;
-    RectTransform columRectTransform;
-    public RectTransform Meta;
+    float playerXAxis;
+    float playerYAxis;
+    float playerZAxis;
 
+    public Text metrosLabel;
+    int metros;
+
+    RectTransform columRectTransform;
     public float columVelocity;
     float tempColumVelocity;
+    float currentTime;
 
     public float columXAxis;
     public float columYAxis;
     public float columZAxis;
 
-    bool onScreen;
-
     void Start () {
         columRectTransform = GetComponent<RectTransform>();
         tempColumVelocity = columVelocity;
+        playerXAxis = playerRectTransform.anchoredPosition.x;
+        playerYAxis = playerRectTransform.anchoredPosition.y;
+        metrosLabel.text = "0";
+        currentTime = 0.0f;
     }
 
     void FixedUpdate () {
-        columRectTransform.anchoredPosition = new Vector3(columXAxis, columYAxis, columZAxis);
-        columYAxis += columVelocity;
+        if (columRectTransform.anchoredPosition.y < 2126.0f) {
+            columRectTransform.anchoredPosition = new Vector3(columXAxis, columYAxis, columZAxis);
+            columYAxis += columVelocity;
+        }
 
-        Vector3 screenPoint = Camera.main.WorldToViewportPoint(Meta.anchoredPosition);
-        onScreen = screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
-        print(onScreen);
+        if(columRectTransform.anchoredPosition.y >= 2126.0f) {
+            playerRectTransform.anchoredPosition = new Vector3(playerXAxis, playerYAxis, playerZAxis);
+            playerYAxis -= columVelocity;
+            columVelocity -= 0.8f;
+        }
+        if (!player.isMeta && player.isAlive) {
+            metrosLabel.text = metros.ToString();
+            currentTime += 0.4f;
+            metros = (int)currentTime;
+        }
+
+
         finishLvl();
     }
     void finishLvl() {

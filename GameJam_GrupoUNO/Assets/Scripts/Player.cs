@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
     Image imagePlayer;
     Animator animatorPly;
 
+
     public bool isAlive;
     public bool isMask;
     public bool isMeta;
@@ -37,6 +38,7 @@ public class Player : MonoBehaviour {
         isAlive = true;
         isMeta = false;
         imagePlayer.sprite.name = nameGeo[Random.Range(0, 4)];
+
         print(imagePlayer.sprite.name);
         SetGeometry();
     }
@@ -80,8 +82,6 @@ public class Player : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        
-
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
