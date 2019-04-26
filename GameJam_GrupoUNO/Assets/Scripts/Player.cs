@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
-    //Geometrias geometria;
+    public GestorGeometrias geometria;
     Image imagePlayer;
     Animator animatorPly;
+
     public bool isAlive;
+    public bool isMask;
     public float delay = 0f;
     public string[] nameGeo = new string[] 
     {
@@ -30,7 +32,6 @@ public class Player : MonoBehaviour {
     void Start ()
     {
         animatorPly = GetComponent<Animator>();
-        //geometria = GetComponent<Geometrias>();
         imagePlayer = GetComponent<Image>();
         isAlive = true;
         imagePlayer.sprite.name = nameGeo[Random.Range(0, 4)];
@@ -81,18 +82,30 @@ public class Player : MonoBehaviour {
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-
-        //if(formasPly.Equals(geometria.formasGeo)) {
-        //    print(isAlive);
-        //} else if (formasPly.Equals(geometria.formasGeo)) {
+        if (collision.gameObject.tag == "Mask")
+        {
+            print("hola");
+            isMask = true;
+        } else {
+            isMask = false;
+        }
+        //if (!formasPly.Equals(geometria.formasGeo)) {
         //    isAlive = false;
+        //    animatorPly.SetBool("Idle_Cuadrado", false);
+        //    animatorPly.SetBool("Idle_Circle", false);
+        //    animatorPly.SetBool("Idle_Triangle", false);
+        //    animatorPly.SetBool("Idle_Rombo", false);
+        //    animatorPly.SetBool("Idle_Pentagono", false);
+
+        //    animatorPly.SetBool("Dead", true);
+        //    Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay);
         //    print(isAlive);
         //}
 
-        if (collision.gameObject.CompareTag(this.gameObject.tag)) {
-            print(isAlive);
-        }
-        else if (!collision.gameObject.CompareTag(this.gameObject.tag)) {
+        if (!collision.gameObject.CompareTag(this.gameObject.tag) 
+            && collision.gameObject.tag != "Meta"
+            && collision.gameObject.tag != "Mask")
+        {
             isAlive = false;
 
             animatorPly.SetBool("Idle_Cuadrado", false);
@@ -103,7 +116,6 @@ public class Player : MonoBehaviour {
 
             animatorPly.SetBool("Dead", true);
             Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay);
-            print(isAlive);
         }
     }
 }
