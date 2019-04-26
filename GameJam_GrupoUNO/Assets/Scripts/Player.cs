@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
-    Geometrias geometria;
+    //Geometrias geometria;
     Image imagePlayer;
     Animator animatorPly;
     public bool isAlive;
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour {
     void Start ()
     {
         animatorPly = GetComponent<Animator>();
-        geometria = GetComponent<Geometrias>();
+        //geometria = GetComponent<Geometrias>();
         imagePlayer = GetComponent<Image>();
         isAlive = true;
         imagePlayer.sprite.name = nameGeo[Random.Range(0, 4)];

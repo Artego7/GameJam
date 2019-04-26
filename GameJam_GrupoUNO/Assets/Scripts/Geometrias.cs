@@ -48,9 +48,9 @@ public class Geometrias : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            if (formasGeo.Equals(1) && geometryRectTransform.anchoredPosition == new Vector2( -100.0f, 0.0f )) {
+            if (geometryRectTransform.anchoredPosition == new Vector2( -150.0f, 0.0f )) {
                 print("lo es");
-                geometryRectTransform.anchoredPosition += new Vector2(100.0f, 0.0f);
+                geometryRectTransform.anchoredPosition = new Vector2(100.0f, 0.0f);
             } else {
                 geometryRectTransform.anchoredPosition += new Vector2(-50.0f, 0.0f);
             }
