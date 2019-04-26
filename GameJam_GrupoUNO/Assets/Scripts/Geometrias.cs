@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Geometrias : MonoBehaviour
 {
-
+    RectTransform geometryRectTransform;
     Image geometry;
     public enum FormaGeometry
     {
@@ -21,6 +21,8 @@ public class Geometrias : MonoBehaviour
     void Start()
     {
         geometry = GetComponent<Image>();
+        geometryRectTransform = GetComponent<RectTransform>();
+
         switch (geometry.sprite.name)
         {
             case "Cuadrado_0":
@@ -45,7 +47,14 @@ public class Geometrias : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            if (formasGeo.Equals(1) && geometryRectTransform.anchoredPosition == new Vector2( -100.0f, 0.0f )) {
+                print("lo es");
+                geometryRectTransform.anchoredPosition += new Vector2(100.0f, 0.0f);
+            } else {
+                geometryRectTransform.anchoredPosition += new Vector2(-50.0f, 0.0f);
+            }
+        }
     }
 
 }

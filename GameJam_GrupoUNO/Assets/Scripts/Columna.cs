@@ -27,25 +27,15 @@ public class Columna : MonoBehaviour {
     }
 
     void FixedUpdate () {
-        //if (player.isAlive) {
             columRectTransform.anchoredPosition = new Vector3(columXAxis, columYAxis, columZAxis);
             columYAxis += columVelocity;
-            GenerateColum();
-            changeSide();
-        //}
-    }
-    void GenerateColum() {
-
-    }
-
-    void changeSide() {
-        if (Input.GetKeyDown(KeyCode.J)) {
-            print("Hola");
-            if(imageSprite != 3) {
-                imageSprite++;
-            }
-            geometryPrefab.sprite.name = "test_" + imageSprite;
+        if (/*!player.isAlive &&*/ columVelocity > 0.0f){
+        columVelocity -= 0.4f;
+        }
+        if (/*!player.isAlive &&*/ columVelocity <= 0.0f)
+        {
+            columVelocity = 0.0f;
+        //menu de muerte
         }
     }
-
 }
