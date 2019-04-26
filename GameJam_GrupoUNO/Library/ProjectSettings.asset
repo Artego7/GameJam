@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 14
-  productGUID: bc40863344d42124abba9c702a4b70e1
+  productGUID: 45112fd4132c10b46bf257d4e58333f0
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   defaultScreenOrientation: 4
@@ -12,7 +12,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: GameJam_GrupoUNO
+  productName: Juego JAM
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -564,14 +564,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: GameJam_GrupoUNO
+  metroPackageName: Juego JAM
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: GameJam_GrupoUNO
+  metroApplicationDescription: Juego JAM
   wsaImages: {}
   metroTileShortName: 
   metroCommandLineArgsFile: 
@@ -641,9 +641,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 582bf21a-874d-4d85-8111-183696fa738a
-  projectName: GameJam_GrupoUNO
-  organizationId: artego7
+  cloudProjectId: 50cffe46-9672-4032-b709-e42505597359
+  projectName: Juego JAM (1)
+  organizationId: marci677
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

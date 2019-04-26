@@ -12,12 +12,12 @@ public class Columna : MonoBehaviour {
     float playerZAxis;
 
     public Text metrosLabel;
-    int metros;
+    public int metros;
 
     RectTransform columRectTransform;
     public float columVelocity;
-    float tempColumVelocity;
-    float currentTime;
+    public float tempColumVelocity;
+    public float currentTime;
 
     public float columXAxis;
     public float columYAxis;
@@ -30,15 +30,15 @@ public class Columna : MonoBehaviour {
         playerYAxis = playerRectTransform.anchoredPosition.y;
         metrosLabel.text = "0";
         currentTime = 0.0f;
+        playerZAxis = 0.0f;
     }
 
     void FixedUpdate () {
-        if (columRectTransform.anchoredPosition.y < 2126.0f) {
+        if (columRectTransform.anchoredPosition.y < 6455.0f) {
             columRectTransform.anchoredPosition = new Vector3(columXAxis, columYAxis, columZAxis);
             columYAxis += columVelocity;
         }
-
-        if(columRectTransform.anchoredPosition.y >= 2126.0f) {
+        if(columRectTransform.anchoredPosition.y >= 6455.0f) {
             playerRectTransform.anchoredPosition = new Vector3(playerXAxis, playerYAxis, playerZAxis);
             playerYAxis -= columVelocity;
             columVelocity -= 0.8f;
@@ -48,7 +48,6 @@ public class Columna : MonoBehaviour {
             currentTime += 0.4f;
             metros = (int)currentTime;
         }
-
 
         finishLvl();
     }

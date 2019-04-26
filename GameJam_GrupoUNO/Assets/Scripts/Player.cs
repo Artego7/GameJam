@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
-    public GestorGeometrias geometria;
-    Image imagePlayer;
+    //public GestorGeometrias geometria;
+    public Image imagePlayer;
     Animator animatorPly;
 
 
@@ -38,12 +38,10 @@ public class Player : MonoBehaviour {
         isAlive = true;
         isMeta = false;
         imagePlayer.sprite.name = nameGeo[Random.Range(0, 4)];
-
-        print(imagePlayer.sprite.name);
         SetGeometry();
     }
 
-    private void SetGeometry()
+    public void SetGeometry()
     {
         switch (imagePlayer.sprite.name)
         {
